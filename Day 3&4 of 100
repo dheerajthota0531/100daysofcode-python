@@ -1,0 +1,99 @@
+randomisation and python lists
+
+"Random module"
+  import random 
+rnd_int = random.randint(1,25)
+print(rnd_int)
+
+rnd_flt = random.random()
+print(round(rnd_flt,2))
+
+rnd_cmbd = rnd_int + rnd_flt
+print(round(rnd_cmbd,2))
+----------------------------------------------------------------------------------------------------------------------------------
+"heads or tails "
+  import random
+  coin=random.randint(0,1)
+  if coin==0:
+    print("Heads")
+  else:
+    print("Tails")
+-----------------------------------------------------------------------------------------------------------------------------------
+  "Banker Roulette-Who will pay the bill?"
+    import random
+
+    names_string = input("Give me everybody's names, separated by a comma. ")
+    names = names_string.split(", ")
+    rnge= len(names)
+    i=random.randint(0,rnge-1)
+    bill_payer = names[i]
+    print(bill_payer+" is going to buy the meal today!")
+-----------------------------------------------------------------------------------------------------------------------------------
+  "Treasue map"
+
+    row1 = ["⬜️","️⬜️","️⬜️"]
+    row2 = ["⬜️","⬜️","️⬜️"]
+    row3 = ["⬜️️","⬜️️","⬜️️"]
+    map = [row1, row2, row3]
+    print(f"{row1}\n{row2}\n{row3}")
+    position = input("Where do you want to put the treasure? ")
+    
+    x=int(position[0])-1
+    y=int(position[1])-1
+    map[x][y]= "x"
+    print(f"{row1}\n{row2}\n{row3}")
+---------------------------------------------------------------------------------------------------------------------------------
+  "ROCK_PAPER_SCISSORS"
+        rock = '''
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    '''
+    
+    paper = '''
+        _______
+    ---'   ____)____
+              ______)
+              _______)
+             _______)
+    ---.__________)
+    '''
+    
+    scissors = '''
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    '''
+    
+
+    import random
+    hc = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+    if hc ==0:
+      print("you chose\n"+rock)
+    elif hc==1:
+      print("you chose\n"+paper)
+    else:
+      print("you chose\n"+scissors)
+    cc = random.randint(0,2)
+    print(cc)
+    list=[rock,paper,scissors]
+    print("computer chose \n"+list[cc])
+    
+    if hc>=3 or hc<=0:
+      print("you entered a invalid number,you lose")
+    elif hc== 0 and cc ==2:
+      print("you win")
+    elif cc==0 and hc ==2:
+      print("you lose")
+    elif cc>hc:
+      print("you lose")
+    elif hc>cc:
+      print("you win")
+    elif hc == cc:
+      print("draw")
